@@ -39,5 +39,20 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+      function confirmePassword(){
+         let userPassword = document.forms["SignupForm"]["user_password"].value;
+          let confirmPassword = document.forms["SignupForm"]["confirm_password"].value;
+      
+    
+          if(userPassword != confirmPassword){
+              document.getElementById("ConfirmPasswordErr").innerText="Password did not match! Please try again";
+          } else {
+              document.getElementById("ConfirmPasswordErr").innerText="";
+          }
+        }
+          
+    </script>
   </body>
 </html>

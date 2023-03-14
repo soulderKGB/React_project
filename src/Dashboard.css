@@ -1,0 +1,79 @@
+body{
+    color: #1F4690;
+}
+section{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+#leftMenu{
+    background-color: #ffffff;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+#rightContent button{
+    border: none;
+    background-color: #1F4690;
+    color: #ffffff;
+    border-radius: 10px;
+}
+#rightContent button:hover{
+    background-color: #1F4690;
+    color: white;
+}
+#btn1{
+padding: 20px 90px;
+border: none;
+}
+#btn2{
+    padding: 20px 100px;
+    border: none;
+}
+#btn3{
+    padding: 20px 105px;
+    border: none;
+}
+.btn{
+    font-size:large;
+    font-weight: bold;
+    color: #1F4690;
+    background-color: #ffffff;
+}
+.btn:hover{
+    background-color: #1F4690;
+    color: white;
+}
+#AyCard{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 120px;
+    padding-right: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#AyCard input{
+    padding: 7px 70px;
+}
+#AyCard button{
+    padding: 7px 128px;
+}
+#Camount{
+    display: flex;
+    padding-left: 150px;
+}
+.cardDisplay {
+    position: relative;
+    text-align: center;
+    color: #BBC2CC;
+  }
+  
+  /* Bottom left text */
+  .bottom-left {
+    position: absolute;
+    bottom: 20px;
+    left: 130px;
+  }
+  #cardimage{
+    width: 400px;
+    margin-left: 100px;
+  }

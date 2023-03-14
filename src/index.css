@@ -10,8 +10,17 @@
   #siblogo {width: 200px;
     align-items: left;
   }
-  #loginbox{ background-color: rgba(13, 4, 22, 0); border-style: dotted ; border-color: white; text-align: left;  color:aliceblue;}
-  
+  #loginbox{ background-color: rgba(13, 4, 22, 0); 
+    border-color: white; 
+    color:aliceblue;}
+
+  #LoginButton{
+    min-width: 120px;
+  }
+  #SignUpButton{
+    min-width: 120px;
+  }
+
   
   header a{
       color: #1F4690;
