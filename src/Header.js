@@ -9,11 +9,11 @@ function Header(props){
         <br/>
           <nav id="nav1">
               <br/>
-              <Link to ='/Dashboard'>Dashboard</Link>
               <a rel="Click here" href="">Savings</a>
               <a rel="Click here" href="">Credit Cards</a>
               <a rel="Click here" href="">Home loans</a>
               <a rel="Click here" href="">Auto Loans</a>
+              {/* <Link to ='/Dashboard'>Dashboard</Link> */}
             </nav>
             </header> 
       </div>

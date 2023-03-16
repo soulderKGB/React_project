@@ -29,7 +29,7 @@ class LoginForm extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('https://crudcrud.com/api/a6d087ea01ba4b9682e19885fa018749/users/users')
         .then(
             res=>{
                 let tempData = res.data;
@@ -76,12 +76,14 @@ class LoginForm extends React.Component{
           }} required />
           </div>
           
-            <input type="submit" value="Login" id="LoginButton"/>
+        
+        <button style={{display:"block"}} type="submit" onClick={this.authenticateUser}>Login</button>
           
         </form><br/>
       
   
         <Link to ='/signup'><button id="SignUpButton">Create an Account</button></Link>
+        
       </section>
         );
     }

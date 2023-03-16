@@ -3,10 +3,84 @@ import './SignUp.js';
 import Header from './Header';
 import Footer from './Footer';
 import { Link } from "react-router-dom";
+import React from 'react';
+import axios from 'axios';
 
-function SignUp(props){
-    return(
-      <>
+class Signup extends React.Component{
+
+  state={
+      fname:'',
+      username:'',
+      email_address:'',
+      phonenum:'',
+      user_password:'',
+      confirm_password:'',
+      checkbox:'',
+      errorMessage:'',
+      errorMessage1:''
+      
+  }
+
+  
+storeUserData = (e)=>{
+e.preventDefault();
+
+let newUser = {
+  first_name:this.state.fname,
+  username:this.state.username,
+  email_address:this.state.email_address,
+  phonenum:this.state.phonenum,
+  user_password:this.state.user_password,
+  confirm_password:this.state.confirm_password,
+  checkbox:this.state.checkbox
+
+}
+
+console.log(newUser);
+
+
+axios.post('https://crudcrud.com/api/a6d087ea01ba4b9682e19885fa018749/users', {newUser})
+  .then(
+      res=>{
+        console.log(res);
+          console.log(res.data);
+          window.location.href = '/';
+      }    
+  );
+  
+}
+
+  validatePassword = (e) => {
+      this.setState({user_password:e.target.value});
+      let lowerCaseCheck =/^(\S)(?=.*[A-Z])(?=.*[a-z])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])[a-zA-Z~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]{6,16}$/;
+    
+      if(e.target.value.match(lowerCaseCheck)){
+        this.setState({
+        errorMessage:""
+        });}
+       else {
+        this.setState({
+        errorMessage:"password must contain lowercase,uppercase & symbols"
+        });}
+    }
+
+    ConfirmPassword = (e) => {
+      this.setState({confirm_password:e.target.value});
+      let userPass = document.forms["SignupForm"]["user_password"].value;
+   
+      if(e.target.value.match(userPass)){
+        this.setState({
+        errorMessage1:""                                                              
+        });}
+       else {
+        this.setState({
+        errorMessage1:"Password did not match! Please try again"
+        });}
+    }
+
+    render(){
+      return(
+        <>
       <Header/>
         <div class="container">
         <div class="title">Registration</div>
@@ -23,7 +97,7 @@ function SignUp(props){
               </div>
               <div class="input-box">
                 <span class="details">Email</span>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required/>
+                <input type="email" id="email_address" name="email_address" placeholder="Enter your email" required/>
               </div>
               <div class="input-box">
                 <span class="details">Phone Number</span>
@@ -44,7 +118,7 @@ function SignUp(props){
     
               </div>
             </div>
-            <div class="gender-details">
+            {/* <div class="gender-details">
               <input type="radio" name="gender" id="dot-1" checked/>
               <input type="radio" name="gender" id="dot-2"/>
               <span class="gender-title">Gender</span>
@@ -58,7 +132,7 @@ function SignUp(props){
                 <span class="gender">Female</span>
               </label>
               </div>
-            </div>
+            </div> */}
     
             <div class="policy">
                 <input type="checkbox" required/>
@@ -80,6 +154,6 @@ function SignUp(props){
      </>
     );
         
-}
+}}
 
-export default SignUp;
+export default Signup;
