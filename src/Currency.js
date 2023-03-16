@@ -29,7 +29,12 @@ render(){
                 <option value="INR">INR</option>
             </select>
             <button onClick={this.convertCurrency}>Convert</button>
-            <h1>Result : {this.state.convertTo=="USD"? this.state.usdAmount : this.state.inrAmount}</h1>
+            <h1>Result : {this.state.convertTo=="USD"? 
+            this.state.usdAmount :
+            this.state.convertTo=="EURO"?
+            this.state.euroAmount :
+            this.state.inrAmount}</h1>
+            
         </div>);
     }
 }
